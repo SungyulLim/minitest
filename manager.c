@@ -56,7 +56,26 @@ int loadData(Product *p){
 	FILE*fp;
 
 	//파일 내용을 읽어와서 배열에 값 추가하기
+	char n1[60];
+    int n2;
+    int n3;
 
+    fp = fopen("market.txt","rt");
+    for(int i=0; i<100; i++){
+      if(feof(fp)){ 
+        break;
+      }
+      p[i]=(Product*)malloc(sizeof(Product));
+      fscanf(fp,"%s",n1);
+			fscanf(fp,"%d",&n2);
+			fscanf(fp,"%d",&n3);
+			
+			strcpy(p[i]->name,n1);
+			p[i]->weight = n2;
+			p[i]->price = n3;
+			
+			count++;
+    }
 
 
 
